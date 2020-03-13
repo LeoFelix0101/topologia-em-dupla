@@ -1,0 +1,83 @@
+[SWITCH 1]
+enable
+configure terminal
+hostname SW-01
+enable secret FELIX*enable
+ip domain-name 1rede.local
+username felixleo privilege 15 secret senai132
+line console 0
+password FELIX*console
+login local
+exit
+line vty 0 15
+password FELIX*vty
+login local
+transport input ssh
+exit
+crypto key generate rsa general-key modulus 1024
+service password-encryption
+interface vlan 1
+ip address 192.168.0.254 255.255.255.0
+no shutdown
+exit
+ip default-gateway 192.168.0.1
+end
+wr
+exit
+
+[SWITCH 2]
+enable
+configure terminal
+hostname SW-02
+enable secret FELIX*enable
+ip domain-name 1rede.local
+username felixleo privilege 15 secret senai132
+line console 0
+password FELIX*console
+login local
+exit
+line vty 0 15
+password FELIX*vty
+login local
+transport input ssh
+exit
+crypto key generate rsa general-key modulus 1024
+service password-encryption
+interface vlan 1
+ip address 172.16.255.254 255.255.0.0
+no shutdown
+exit
+ip default-gateway 172.16.0.1
+end
+wr
+exit
+
+[ROUTER]
+enable
+configure terminal
+hostname RT-01
+enable secret FELIX*enable
+ip domain-name 1rede.local
+username felixleo privilege 15 secret senai132
+line console 0
+password FELIX*console
+login local
+exit
+line vty 0 15
+password FELIX*vty
+login local
+transport input ssh
+exit
+crypto key generate rsa general-key modulus 1024
+service password-encryption
+interface gigabitEthernet 0/0
+ip address 192.168.0.1 255.255.255.0
+no shutdown
+exit
+interface gigabitEthernet 0/1
+ip address 172.16.0.1 255.255.0.0
+no shutdown
+exit
+end
+wr
+exit

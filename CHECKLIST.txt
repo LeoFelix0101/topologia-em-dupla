@@ -1,0 +1,24 @@
+CHECKLIST:
+Colocar IP's nos PC's
+Colocar Máscara 
+Colocar Gateway
+Trocar o nome do SW
+Colocar senha de Enable
+Colocar senha de Console
+Colocar o domínio
+Colocar IP nos SW's
+NÃO ESQUECER O "no shutdown"
+Colocar a chave de SSH
+Colocar senha na VTY
+Criptografar todas as senhas
+Mudar o nome do Router
+Colocar senha no Router
+Domínio 
+Mudar o bit para 1024
+Senha na Console
+Senha na VTY
+ativar o ssh
+Colocar o IP das duas redes
+"no shutdown"
+Criptografar as senhas
+Adicionar usuário
