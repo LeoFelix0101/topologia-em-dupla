@@ -1,2 +1,1 @@
-# topologia-em-dupla
-Abner e Leonardo Felix
+# Topologia em Dupla
